@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const userRoute = require("./routes/userRoute");
 const app = express();
 
 app.use("/", (req, res) => {
@@ -16,6 +17,7 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
+app.use("/user", userRoute);
 
 app.use((err, req, res) => {
   res.json({ status: "faild", message: err.message });
