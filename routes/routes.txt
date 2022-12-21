@@ -1,0 +1,10 @@
+USER
+/////////////////////////////////////////////////////////////////////
+GET             /users                => get all users
+GET            /users/:id             => get user by id
+DELETE        /users/:id              => delete user by id
+PATCH        /users/:id               => edit user by id
+POST        /users/register           => add new user
+POST       /users/login               => login as user
+POST      /users/login/admin          => login as admin
+GET     /users//logout/:id                => logout

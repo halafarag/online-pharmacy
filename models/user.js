@@ -14,7 +14,7 @@ const userSchema = new Schema({
     trim: true,
   },
   moblieNum: {
-    type: Number,
+    type: String,
     required: true,
   },
   isAdmin: {
