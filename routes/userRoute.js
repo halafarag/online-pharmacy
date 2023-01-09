@@ -3,7 +3,6 @@ const { Router } = require("express");
 const router = express.Router();
 const userController = require("../controller/userController");
 const { auth, authorization } = require("../middlewares/auth");
-const User = require("../models/user");
 
 //get User By ID
 router.get("/:id", auth, userController.getUserByID);

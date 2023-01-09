@@ -5,6 +5,7 @@ const userRoute = require("./routes/userRoute");
 const categoryRoute = require("./routes/categoryRoutes");
 const subCateRoute = require("./routes/subCatRoute");
 const productRoute = require("./routes/productRouts");
+const cartRoute = require("./routes/cartRoute");
 const app = express();
 
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use("/users", userRoute);
 app.use("/category", categoryRoute);
 app.use("/subcat", subCateRoute);
 app.use("/product", productRoute);
+app.use("/cart", cartRoute);
 
 app.use((err, req, res) => {
   res.json({ status: "faild", message: err.message });
