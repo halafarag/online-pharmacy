@@ -4,11 +4,13 @@ const categorySchema = new Schema(
   {
     name: {
       type: String,
-      trim: true,
       minLength: 3,
       maxLength: 100,
       unique: true,
       required: true,
+    },
+    img: {
+      type: Array,
     },
   },
   { timestamps: true }

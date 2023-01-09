@@ -16,7 +16,7 @@ const productSchema = new Schema(
       required: true,
     },
     volume: {
-      type: Number,
+      type: String,
       required: true,
     },
     img: {

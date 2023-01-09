@@ -6,11 +6,11 @@ const { auth, authorization } = require("../middlewares/auth");
 const User = require("../models/user");
 
 //get User By ID
-router.get("/:id", authorization, userController.getUserByID);
+router.get("/:id", auth, userController.getUserByID);
 //delete user by id
-router.delete("/:id", authorization, userController.deleteUser);
+router.delete("/:id", auth, userController.deleteUser);
 //edit user
-router.patch("/:id", authorization, userController.updateInfo);
+router.patch("/:id", auth, userController.updateInfo);
 //register
 router.post("/register", userController.register);
 //login

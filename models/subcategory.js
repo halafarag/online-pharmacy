@@ -6,7 +6,6 @@ const subcatSchema = new Schema(
     name: {
       type: String,
       required: true,
-      trim: true,
       minLength: 3,
       maxLength: 100,
     },

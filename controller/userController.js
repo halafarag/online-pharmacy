@@ -20,8 +20,8 @@ async function login(req, res) {
     if (user) {
       const valid = bcrypt.compareSync(password, user.password);
       if (valid) {
-        const token = jwt.sign({ data: { userName: user.userName, userId: user.id } }, process.env.SECRET, { expiresIn: "24h" });
-        res.status(200).json({ acssesToken: token });
+        const token = jwt.sign({ data: { isAdmin: user.isAdmin, userId: user.id } }, process.env.SECRET, { expiresIn: "24h" });
+        res.status(200).json({ ...user._doc, accessToken: token });
       } else {
         res.status(401).json("insert correct password");
       }
