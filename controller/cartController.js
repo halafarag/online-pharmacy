@@ -3,7 +3,7 @@ const Cart = require("../models/cart");
 // GET CART BY USER ID
 async function getCartByUserID(req, res) {
   try {
-    const cart = await Cart.find({ user: req.params.id }).populate("product user");
+    const cart = await Cart.find({ user: req.params.id }).populate("product user", "name title price volume img category subcategory , userName ");
     res.status(200).json(cart);
   } catch (err) {
     res.status(404).json({ error: err.message });
