@@ -27,6 +27,7 @@ async function getAll(req, res) {
           img: item.product.img,
           category: item.product.category,
           subcategory: item.product.subcategory,
+          quantity: item.product.quantity,
         },
         quantity: item.quantity,
       };
@@ -58,9 +59,12 @@ async function deleteFromCart(req, res) {
 async function addToCart(req, res) {
   try {
     const product = req.body;
-    const found = await Cart.findOne({ user: req.userdata.userId, product: req.body.product });
+    const found = await Cart.findOne({ user: req.userdata.userId, product: req.body.product, amount: req.body.amount });
     if (found) {
-      const update = await Cart.findOneAndUpdate({ user: req.userdata.userId, product: req.body.product }, product, { runValidators: true, new: true });
+      const update = await Cart.findOneAndUpdate({ user: req.userdata.userId, product: req.body.product, amount: req.body.amount }, product, {
+        runValidators: true,
+        new: true,
+      });
       res.status(201).json(update);
     } else {
       req.body.user = req.userdata.userId;

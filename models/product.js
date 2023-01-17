@@ -33,6 +33,11 @@ const productSchema = new Schema(
       ref: "SubCategory",
       required: true,
     },
+    quantity: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
   },
   {
     timestamps: true,

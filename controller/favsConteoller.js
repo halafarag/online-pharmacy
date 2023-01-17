@@ -50,6 +50,7 @@ async function getAllFav(req, res) {
           ...item.productId,
           price: item.productId.price,
           img: item.productId.img,
+          quantity: item.productId.quantity,
         },
       };
     });

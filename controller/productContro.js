@@ -69,6 +69,7 @@ async function getProductByCategory(req, res) {
           img: item.img,
           category: item.category,
           subcategory: item.subcategory,
+          quantity: item.quantity,
         };
       });
       console.log("result", finalResult);
@@ -103,6 +104,7 @@ async function getProductBySUB(req, res) {
           img: item.img,
           category: item.category,
           subcategory: item.subcategory,
+          quantity: item.quantity,
         };
       });
       console.log("result", finalResult);
