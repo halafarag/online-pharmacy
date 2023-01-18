@@ -28,6 +28,7 @@ async function getAll(req, res) {
           category: item.product.category,
           subcategory: item.product.subcategory,
           quantity: item.product.quantity,
+          discount: item.product.discount,
         },
         quantity: item.quantity,
       };

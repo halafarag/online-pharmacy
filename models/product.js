@@ -38,6 +38,9 @@ const productSchema = new Schema(
       required: true,
       default: 1,
     },
+    discount: {
+      type: Number,
+    },
   },
   {
     timestamps: true,

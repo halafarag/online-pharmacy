@@ -70,6 +70,7 @@ async function getProductByCategory(req, res) {
           category: item.category,
           subcategory: item.subcategory,
           quantity: item.quantity,
+          discount: item.discount,
         };
       });
       console.log("result", finalResult);
@@ -105,6 +106,7 @@ async function getProductBySUB(req, res) {
           category: item.category,
           subcategory: item.subcategory,
           quantity: item.quantity,
+          discount: item.quantity,
         };
       });
       console.log("result", finalResult);
