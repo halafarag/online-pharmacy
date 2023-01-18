@@ -24,7 +24,9 @@ app.use("/subcat", subCateRoute);
 app.use("/product", productRoute);
 app.use("/cart", cartRoute);
 app.use("/fav", favsRoute);
-
+app.get("/", (req, res) => {
+  res.send("Welcome to Hala farag API");
+});
 app.use((err, req, res) => {
   res.json({ status: "faild", message: err.message });
 });
